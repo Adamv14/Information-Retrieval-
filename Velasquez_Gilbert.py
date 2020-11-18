@@ -112,6 +112,11 @@ def getUserName(email):
         i +=1
     return email[0:i]
 
+# This Method wll create the Pickle file from the Professors PD
+def createPickle(path,Professors):
+    os.chdir(path)
+    Professors.to_pickle('professors.pkl')
+
 
 
 # ***************************** Part 2 Methods ***************************** 
@@ -182,7 +187,7 @@ sys.setrecursionlimit(10000) # Set the recursion limit to 10,000 so we dont get 
 
 Professors = constructProfessorsPD() # Create the Professors Panda Dataframe.   Part 1: Task 1 
 
-Professors.to_pickle('professors.pkl') # Store the Professors DF into a Pickle File.    Part 1: Task 2
+createPickle(path,Professors) # Store the Professors DF into a Pickle File.    Part 1: Task 2
 
 createWebsiteTextFiles(Professors,path) # Create the txt files of all the Professors' websites.  Part 1: Task 3 & 4 
 
